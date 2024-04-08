@@ -1,5 +1,5 @@
 import { reactive } from 'vue'
-import type { dataType } from './config'
+import type { dataType } from '../config'
 
 export function useFormData(data: dataType[]): Object {
   const formData: dataType[] = reactive([])
@@ -22,7 +22,7 @@ export function useFormData(data: dataType[]): Object {
     const value =
       (dailyWage * (1 * surroundings * isomerism * simulRelation)) /
       (35 * (workingHours + commuting - 0.5 * slackOff) * education)
-    return value
+    return value.toFixed(2)
   }
   return {
     formData,

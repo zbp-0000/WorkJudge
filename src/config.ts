@@ -3,106 +3,106 @@ export type dataType = {
   label: string
   type: 'input' | 'select' | 'switch'
   placeholder: string
-  value: string
+  value: string | boolean | null
   options?: Array<{ label: string; value: string | number }>
 }
 
 const hourData = [
   {
     label: '1小时',
-    value: '1'
+    value: 1
   },
   {
     label: '2小时',
-    value: '2'
+    value: 2
   },
   {
     label: '3小时',
-    value: '3'
+    value: 3
   },
   {
     label: '4小时',
-    value: '4'
+    value: 4
   },
   {
     label: '5小时',
-    value: '5'
+    value: 5
   },
   {
     label: '6小时',
-    value: '6'
+    value: 6
   },
   {
     label: '7小时',
-    value: '7'
+    value: 7
   },
   {
     label: '8小时',
-    value: '8'
+    value: 8
   },
   {
     label: '9小时',
-    value: '9'
+    value: 9
   },
   {
     label: '10小时',
-    value: '10'
+    value: 10
   },
   {
     label: '11小时',
-    value: '11'
+    value: 11
   },
   {
     label: '12小时',
-    value: '12'
+    value: 12
   },
   {
     label: '13小时',
-    value: '13'
+    value: 13
   },
   {
     label: '14小时',
-    value: '14'
+    value: 14
   },
   {
     label: '15小时',
-    value: '15'
+    value: 15
   },
   {
     label: '16小时',
-    value: '16'
+    value: 16
   },
   {
     label: '17小时',
-    value: '17'
+    value: 17
   },
   {
     label: '18小时',
-    value: '18'
+    value: 18
   },
   {
     label: '19小时',
-    value: '19'
+    value: 19
   },
   {
     label: '20小时',
-    value: '20'
+    value: 20
   },
   {
     label: '21小时',
-    value: '21'
+    value: 21
   },
   {
     label: '22小时',
-    value: '22'
+    value: 22
   },
   {
     label: '23小时',
-    value: '23'
+    value: 23
   },
   {
     label: '24小时',
-    value: '24'
+    value: 24
   }
 ]
 
@@ -112,14 +112,14 @@ export const data: dataType[] = [
     label: '平均日薪酬',
     type: 'input',
     placeholder: '平均日薪为元（你又不是某爽）',
-    value: ''
+    value: null
   },
   {
     key: 'workingHours',
     label: '工作时长',
     type: 'select',
     placeholder: '工作时长',
-    value: '',
+    value: null,
     options: hourData
   },
   {
@@ -127,7 +127,7 @@ export const data: dataType[] = [
     label: '通勤时长',
     type: 'select',
     placeholder: '通勤时长',
-    value: '',
+    value: null,
     options: hourData
   },
   {
@@ -135,7 +135,7 @@ export const data: dataType[] = [
     label: '摸鱼时长',
     type: 'select',
     placeholder: '不干活+吃饭+午休',
-    value: '',
+    value: null,
     options: hourData
   },
   {
@@ -143,7 +143,7 @@ export const data: dataType[] = [
     label: '学历系数',
     type: 'select',
     placeholder: '学历系数',
-    value: '',
+    value: null,
     options: [
       {
         label: '专科及以下',
@@ -151,6 +151,10 @@ export const data: dataType[] = [
       },
       {
         label: '普通本科',
+        value: 1.0
+      },
+      {
+        label: '高级本科',
         value: 1.2
       },
       {
@@ -176,7 +180,7 @@ export const data: dataType[] = [
     label: '工作环境系数',
     type: 'select',
     placeholder: '工作环境系数',
-    value: '',
+    value: null,
     options: [
       {
         label: '偏僻地区',
@@ -201,7 +205,7 @@ export const data: dataType[] = [
     label: '异性环境系数',
     type: 'select',
     placeholder: '异性环境系数',
-    value: '',
+    value: null,
     options: [
       {
         label: '没有',
@@ -222,7 +226,7 @@ export const data: dataType[] = [
     label: '同事环境系数',
     type: 'select',
     placeholder: '同事环境系数',
-    value: '',
+    value: null,
     options: [
       {
         label: 'SB很多',
@@ -243,7 +247,7 @@ export const data: dataType[] = [
     label: '职业资格系数',
     type: 'select',
     placeholder: '职业资格系数',
-    value: '',
+    value: null,
     options: [
       {
         label: '无要求、二级',
@@ -268,6 +272,6 @@ export const data: dataType[] = [
     label: '是否8:30前上班',
     type: 'switch',
     placeholder: '是否8:30前上班',
-    value: ''
+    value: false
   }
 ]

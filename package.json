@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@vueuse/core": "^10.9.0",
+    "canvas-confetti": "^1.9.2",
     "element-plus": "^2.6.3",
     "scss": "^0.2.4",
     "unplugin-auto-import": "^0.17.5",

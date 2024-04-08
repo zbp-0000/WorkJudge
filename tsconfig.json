@@ -19,7 +19,9 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
+
+    // "typeRoots": ["./typings"]
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "src/typings/*.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
