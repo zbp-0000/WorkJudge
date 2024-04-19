@@ -7,6 +7,8 @@ export type dataType = {
   options?: Array<{ label: string; value: string | number }>
 }
 
+export type submit = { value: number; easily: string }
+
 const hourData = [
   {
     label: '1小时',

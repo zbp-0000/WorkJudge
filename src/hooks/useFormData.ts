@@ -1,5 +1,5 @@
 import { reactive } from 'vue'
-import type { dataType } from '../config'
+import type { dataType, submit } from '../config'
 
 export function useFormData(data: dataType[]): Object {
   const formData: dataType[] = reactive([])
@@ -7,8 +7,7 @@ export function useFormData(data: dataType[]): Object {
   data.forEach((item) => formData.push(item))
   data.forEach((item) => (formValue[item.key] = item.value))
 
-  const submitHandler = () => {
-    console.log(formValue)
+  const submitHandler = (): submit => {
     const {
       dailyWage,
       workingHours,
@@ -22,7 +21,20 @@ export function useFormData(data: dataType[]): Object {
     const value =
       (dailyWage * (1 * surroundings * isomerism * simulRelation)) /
       (35 * (workingHours + commuting - 0.5 * slackOff) * education)
-    return value.toFixed(2)
+
+    /**
+       * 低于0.8很惨
+       * 0.8-1.5一般
+         高于1.5很爽
+         高于2.0爽到爆
+       */
+    const fixedVal = Number(value.toFixed(2))
+    const easily =
+      fixedVal < 0.8 ? '很惨' : fixedVal < 1.5 ? '一般' : fixedVal < 1.5 ? '很爽' : '爽到爆'
+    return {
+      value: fixedVal,
+      easily: easily
+    }
   }
   return {
     formData,

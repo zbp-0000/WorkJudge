@@ -11,7 +11,7 @@ const porps = defineProps({
   }
 })
 
-const emit = defineEmits(['update:visible'])
+const emit = defineEmits(['update:visible', 'updateEasily'])
 
 const dialogVisible = computed({
   get: () => porps.visible,
@@ -27,7 +27,7 @@ const resetForm = (formEl: FormInstance | undefined) => {
 }
 
 const handleConfirm = () => {
-  submitHandler()
+  emit('updateEasily', submitHandler())
   emit('update:visible', false)
 }
 </script>

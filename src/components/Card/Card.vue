@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 
 const element = ref<HTMLElement | null>(null)
-const multiple = 30 // 数值越小 偏移量对大
+const multiple = 20 // 数值越小 偏移量对大
 function mouseMove(e: MouseEvent) {
   requestAnimationFrame(() => {
     transformElement(e.clientX, e.clientY)
@@ -33,8 +33,8 @@ function mouseLeave() {
 
 <style scoped lang="scss">
 #card-3d {
-  width: 100%;
-  height: 100%;
+  width: fit-content;
+  height: fit-content;
   transform-style: preserve-3d;
   perspective: 500px;
   /* display: flex;
@@ -44,9 +44,10 @@ function mouseLeave() {
   left: 0;
   top: 0; */
 
-  div {
+  & > div {
     width: fit-content;
     height: fit-content;
+    margin: auto;
     /* border-radius: 10px; */
     /* border: 1px solid var(color-scheme); */
     transform-style: preserve-3d;
