@@ -21,10 +21,6 @@ const dialogVisible = computed({
 const formRef = ref<FormInstance>()
 
 const { formData, formValue, submitHandler }: any = useFormData(data)
-const resetForm = (formEl: FormInstance | undefined) => {
-  if (!formEl) return
-  formEl.resetFields()
-}
 
 const handleConfirm = () => {
   emit('updateEasily', submitHandler())
@@ -33,12 +29,17 @@ const handleConfirm = () => {
 </script>
 
 <template>
-  <el-dialog v-model="dialogVisible" width="500" align-center>
+  <el-dialog v-model="dialogVisible" width="450" align-center>
     <el-form :model="formValue" label-width="auto" style="max-width: 600px" ref="formRef">
       <template v-for="item in formData">
         <template v-if="item.type === 'input'">
           <el-form-item :label="item.label">
-            <el-input v-model.number="formValue[item.key]" :placeholder="item.placeholder" />
+            <el-input
+              v-model.number="formValue[item.key]"
+              :placeholder="item.placeholder"
+              autofocus
+              style="width: 240px"
+            />
           </el-form-item>
         </template>
         <template v-if="item.type === 'select'">
@@ -75,7 +76,6 @@ const handleConfirm = () => {
     <template #footer>
       <div class="dialog-footer">
         <el-button @click="dialogVisible = false">取消</el-button>
-        <el-button @click="resetForm(formRef)">重置</el-button>
         <el-button type="primary" @click="handleConfirm"> 确定 </el-button>
       </div>
     </template>

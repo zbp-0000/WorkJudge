@@ -17,11 +17,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
+import { ElLoading } from 'element-plus'
 import Popup from './components/Popup/Popup.vue'
 import Card from './components/Card/Card.vue'
 import type { submit } from './config'
-
 import { renderConfetti } from './utils/my-confetti'
 
 const visible = ref(false)
@@ -35,6 +35,29 @@ const updateEasily = (val: submit) => {
   work.value = val
   renderConfetti()
 }
+
+onMounted(() => {
+  const loading = ElLoading.service({
+    lock: true,
+    text: 'Loading',
+    background: 'rgba(0, 0, 0, 0.7)'
+  })
+  const font = new FontFace(
+    'QianTuBiFengShouXieTi',
+    'url(http://www.bopeng.top/assets/QianTuBiFengShouXieTi-2.ttf)'
+  )
+
+  // 把字体添加到 document.font（FontFaceSet）中
+  document.fonts.add(font)
+
+  // 加载字体
+  font.load()
+
+  // 等待到所有的字体都加载完毕
+  document.fonts.ready.then(() => {
+    loading.close()
+  })
+})
 </script>
 
 <style scoped lang="scss">

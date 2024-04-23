@@ -9,6 +9,7 @@ export function useFormData(data: dataType[]): Object {
 
   const submitHandler = (): submit => {
     const {
+      beOnDuty,
       dailyWage,
       workingHours,
       commuting,
@@ -18,8 +19,9 @@ export function useFormData(data: dataType[]): Object {
       isomerism,
       simulRelation
     } = formValue
+    const duty = beOnDuty ? 0.95 : 1
     const value =
-      (dailyWage * (1 * surroundings * isomerism * simulRelation)) /
+      (dailyWage * (duty * surroundings * isomerism * simulRelation)) /
       (35 * (workingHours + commuting - 0.5 * slackOff) * education)
 
     /**
@@ -30,7 +32,7 @@ export function useFormData(data: dataType[]): Object {
        */
     const fixedVal = Number(value.toFixed(2))
     const easily =
-      fixedVal < 0.8 ? '很惨' : fixedVal < 1.5 ? '一般' : fixedVal < 1.5 ? '很爽' : '爽到爆'
+      fixedVal < 0.8 ? '很惨' : fixedVal < 1.5 ? '一般' : fixedVal < 2.0 ? '很爽' : '爽到爆'
     return {
       value: fixedVal,
       easily: easily
