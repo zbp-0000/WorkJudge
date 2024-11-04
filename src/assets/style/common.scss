@@ -20,7 +20,7 @@ body {
   height: 100%;
 }
 
-// @font-face {
-//   font-family: QianTuBiFengShouXieTi; /* 自定义字体名称 */
-//   src: url('../font/QianTuBiFengShouXieTi-2.ttf') format('truetype'); /* 字体文件的路径和格式 */
-// }
+@font-face {
+  font-family: QianTuBiFengShouXieTi; /* 自定义字体名称 */
+  src: url('http://bopeng.top/assets/QianTuBiFengShouXieTi-2.ttf') format('truetype'); /* 字体文件的路径和格式 */
+}

@@ -42,9 +42,10 @@ onMounted(() => {
     text: 'Loading',
     background: 'rgba(0, 0, 0, 0.7)'
   })
+
   const font = new FontFace(
     'QianTuBiFengShouXieTi',
-    'url(http://www.bopeng.top/assets/QianTuBiFengShouXieTi-2.ttf)'
+    'url(http://bopeng.top/assets/QianTuBiFengShouXieTi-2.ttf)'
   )
 
   // 把字体添加到 document.font（FontFaceSet）中

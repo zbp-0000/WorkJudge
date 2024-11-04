@@ -37,12 +37,6 @@ function mouseLeave() {
   height: fit-content;
   transform-style: preserve-3d;
   perspective: 500px;
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  left: 0;
-  top: 0; */
 
   & > div {
     width: fit-content;
@@ -51,7 +45,7 @@ function mouseLeave() {
     /* border-radius: 10px; */
     /* border: 1px solid var(color-scheme); */
     transform-style: preserve-3d;
-    transform: rotateX(15deg) rotateY(30deg);
+    transform: rotateX(0deg) rotateY(0deg);
     transition: all 0.2s;
   }
 }
