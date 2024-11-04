@@ -7,7 +7,15 @@
     <div class="coefficient">
       <div>
         <span>{{ work.value }}</span>
-        <p>系数</p>
+        <div class="coefficient-info">
+          <p>系数</p>
+          <el-tooltip
+            placement="top-start"
+          >
+            <template #content>低于0.8很惨<br />0.8-1.5一般<br />高于1.5很爽<br />高于2.0爽到爆</template>
+            <el-icon><QuestionFilled /></el-icon>
+          </el-tooltip>
+        </div>
       </div>
     </div>
     <button class="custom-btn btn-login" @click="visible = true">点击开始</button>
@@ -23,6 +31,7 @@ import Popup from './components/Popup/Popup.vue'
 import Card from './components/Card/Card.vue'
 import type { submit } from './config'
 import { renderConfetti } from './utils/my-confetti'
+import { QuestionFilled } from '@element-plus/icons-vue'
 
 const visible = ref(false)
 
